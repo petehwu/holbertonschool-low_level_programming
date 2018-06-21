@@ -9,13 +9,10 @@ int main(void)
 {
 	int i;
 	int j;
-	int offset;
 
-	offset = 0;
 	for (i = 48; i < 58; i++)
 	{
-		j = i + offset;
-		for (; j < 58; j++)
+		for (j = i + 1; j < 58; j++)
 		{
 			putchar(i);
 			putchar(j);
@@ -25,7 +22,6 @@ int main(void)
 				putchar(32);
 			}
 		}
-		offset = 1;
 	}
 	putchar('\n');
 	return (0);

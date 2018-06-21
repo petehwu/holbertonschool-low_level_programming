@@ -25,7 +25,7 @@ int main(void)
 				putchar(32);
 			}
 		}
-		offset = 1;;
+		offset = 1;
 	}
 	putchar('\n');
 	return (0);

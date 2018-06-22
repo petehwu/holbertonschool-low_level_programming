@@ -7,12 +7,10 @@
  */
 int main(void)
 {
-	char str1[] = "and that piece of art is useful";
-	char str3[] = "\"";
+	char str1[] = "and that piece of art is useful\"";
 	char str2[] = " - Dora Korpar, 2015-10-19\n";
 
-	write(2, str1, strlen(str1));
-	write(0, str3, 1);
-	write(2, str2, strlen(str2));
+	write(2, str1, 31);
+	write(2, str2, 27);
 	return (1);
 }

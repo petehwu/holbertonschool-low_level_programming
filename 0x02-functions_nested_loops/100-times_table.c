@@ -2,8 +2,8 @@
 
 /**
  * print_times_table - function to print the multiplcation table
- * @i: input paramter to print multiplication table for
- * Description: takes the input number and prints 
+ * @n: input paramter to print multiplication table for
+ * Description: takes the input number and prints
  * multlipaction table if between 1 and 15
  */
 

@@ -8,6 +8,7 @@
 int main(void)
 {
 	int i;
+
 	long double y;
 	long double z;
 	long double tot;

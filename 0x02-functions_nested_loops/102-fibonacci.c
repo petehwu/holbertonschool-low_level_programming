@@ -14,11 +14,11 @@ int main(void)
 
 	y = 1;
 	z = 2;
-	printf("1, 2, ");	
+	printf("1, 2, ");
 	for (i = 0; i < 48; i++)
 	{
 		tot = y + z;
-		if ( i == 47)
+		if (i == 47)
 			printf("%ld", tot);
 		else
 			printf("%ld, ", tot);

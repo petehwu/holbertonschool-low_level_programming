@@ -9,20 +9,22 @@ int main(void)
 {
 	long int y;
 	long int z;
-	long int x;
 	long int tot;
+	long int x;
 
 	y = 1;
 	z = 2;
-	x = 2;
-	while (y + z < 4000000)
+	x = 0;
+	while (z < 4000000)
 	{
+		if (z % 2 == 0)
+			x += z;
 		tot = y + z;
-		if (tot % 2 == 0)
-			x += tot;
 		y = z;
 		z = tot;
+		printf("%ld, ", y);
+		printf("%ld, ", z);
 	}
-	printf("%ld\n", x);
+	printf("%ld\n", z);
 	return (0);
 }

@@ -12,8 +12,8 @@ int main(void)
 	long int tot;
 
 	y = 2;
-	z = 4;
-	printf("2, 4, ");
+	z = 8;
+	printf("2, 8, ");
 	while (y + z < 4000000)
 	{
 		tot = y + z;

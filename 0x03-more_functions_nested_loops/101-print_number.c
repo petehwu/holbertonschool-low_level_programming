@@ -7,17 +7,23 @@
 
 void print_number(int n)
 {
-	int t;
+	int v;
 
-	t = n;
-	if (t < 0 && t / 10 == 0)
-		_putchar(45);
-	t /= 10;
-	if (t != 0)
-		print_number(t);
-
+	if (n < 0 && n / 10 == 0)
+	{
+		v = 45;
+		_putchar(v);
+	}
+	if (n / 10 != 0)
+		print_number(n / 10);
 	if (n < 0)
-		_putchar('0' + (n % 10) * -1);
+	{
+		v = 48 + ((n % 10) * -1);
+		_putchar(v);
+	}
 	else
-		_putchar('0' + (n % 10));
+	{
+		v = 48 + (n % 10);
+		_putchar(v);
+	}
 }

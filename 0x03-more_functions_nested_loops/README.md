@@ -1,5 +1,5 @@
 ### 0x03. C - More Functions, more nested loops
-
+---
 ## Description:
 More practice with nested loops and how to use them and more practice with functions and scope of variables.
 
@@ -19,4 +19,5 @@ File | Description
 9-fizz\_buzz.c | print 1 to 100 but with some substitutions
 10-print\_triangle.c | draw triangle
 
-
+## Author
+Peter Wu

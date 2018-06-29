@@ -13,19 +13,14 @@ int main(void)
 	{
 		mod3 = x % 3;
 		mod5 = x % 5;
-		if (mod3 == 0 || mod5 == 0)
-		{
-			if (mod3 == 0 && mod5 == 0)
-				printf("FizzBuzz");
-			else if (mod3 == 0)
-				printf("Fizz");
-			else
-				printf("Buzz");
-		}
+		if (mod3 == 0 && mod5 == 0)
+			printf("FizzBuzz");
+		else if (mod3 == 0)
+			printf("Fizz");
+		else if (mod5 == 0)
+			printf("Buzz");
 		else
-		{
 			printf("%d", x);
-		}
 		if (x < 100)
 			printf(" ");
 	}

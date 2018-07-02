@@ -1,10 +1,10 @@
-### 0x04. C - Pointers, arrays and string
+#### 0x04. C - Pointers, arrays and string
 ---
 ## Description:
 Learn about pointers and arrays, differences between them and how to use them
 
-## Files
----
+## Files 
+
 File | Description
 ---|---
 0-reset\_to\_98.c | function that updates value to 98  

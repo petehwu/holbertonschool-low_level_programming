@@ -1,9 +1,9 @@
-#### 0x04. C - Pointers, arrays and string
+## 0x04. C - Pointers, arrays and string
 ---
-## Description:
+### Description:
 Learn about pointers and arrays, differences between them and how to use them
 
-## Files 
+### Files 
 
 File | Description
 ---|---

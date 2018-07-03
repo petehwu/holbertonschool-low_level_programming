@@ -26,9 +26,12 @@ int main(void)
     printf("%d\n", n);
     n = _atoi("---++++ -++ Sui - te -   402 #cisfun :)");
     printf("%d\n", n);
-    n = _atoi("−2147483648");
+    n = _atoi("zxccv−2147483648zxcvxvc");
     printf("%d\n", n);
     n = _atoi("xxxxx");
     printf("%d\n", n);
+    n = _atoi("000000");
+    printf("%d\n", n);
+
     return (0);
 }

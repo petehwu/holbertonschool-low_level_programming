@@ -31,7 +31,7 @@ int _atoi(char *s)
 	}
 	if (numstart >= 0 && numend == -1)
 		numend = i - 1;
-	else
+	else if ( numstart == -1)
 		return (0);
 	for (x = numstart; x <= numend; x++)
 	{

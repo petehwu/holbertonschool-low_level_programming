@@ -13,5 +13,7 @@ int main(void)
     print_rev(str);
     str = "I";
     print_rev(str);
+    str = "";
+    print_rev(str);
     return (0);
 }

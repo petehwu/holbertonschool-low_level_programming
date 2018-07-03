@@ -8,7 +8,6 @@ int _atoi(char *s)
 {
 	int multiplier = 1, thenum = 0, digits = 0;
 	int numstart = -1, numend = -1, exit_loop = 0,  x, i = 0, neg = 0, z;
-	char signbit = '+';
 
 	while (s[i] != '\0' && exit_loop == 0)
 	{

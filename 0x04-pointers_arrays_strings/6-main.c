@@ -13,7 +13,9 @@ int main(void)
     puts2(str);
     str = "1";
     puts2(str);
-    str = "12";
+    str = "25";
+    puts2(str);
+    str = "673";
     puts2(str);
     return (0);
 }

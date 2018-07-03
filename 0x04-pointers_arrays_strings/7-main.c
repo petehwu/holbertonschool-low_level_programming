@@ -13,5 +13,9 @@ int main(void)
     puts_half(str);
     str = "012345678";
     puts_half(str);
+    str = "78";
+    puts_half(str);
+    str = "3";
+    puts_half(str);
     return (0);
 }

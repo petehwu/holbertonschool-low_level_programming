@@ -32,6 +32,13 @@ int main(void)
     printf("%d\n", n);
     n = _atoi("000000");
     printf("%d\n", n);
+    n = _atoi("99999999999999999");
+    printf("%d\n", n);
 
+    n = _atoi("−2147483649");
+    printf("%d\n", n);
+    n = _atoi("2147483649");
+    printf("%d\n", n);
+    return (0);
     return (0);
 }

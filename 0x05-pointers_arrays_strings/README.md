@@ -2,7 +2,7 @@
 ---
 ### Description: 
 More practice with pointers, arrays and string
----
+
 ### Files
   
 File | Description

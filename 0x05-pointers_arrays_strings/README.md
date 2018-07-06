@@ -1,4 +1,4 @@
-#### 0x05.C - More pointers, arrays and strings  
+## 0x05.C - More pointers, arrays and strings  
 
 ### Description 
  More practice with pointers, arrays and string
@@ -6,6 +6,7 @@
 ### Files
   
 File | Description
+---|---
 0-strcat.c | concatenate two strings
 1-strncat.c | concatenate two string
 2-strncpy.c | copies strings

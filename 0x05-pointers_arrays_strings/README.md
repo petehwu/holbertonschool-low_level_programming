@@ -1,6 +1,6 @@
 ## 0x05.C - More pointers, arrays and strings  
 
-### Description 
+### Description: 
 More practice with pointers, arrays and string
 ---
 ### Files

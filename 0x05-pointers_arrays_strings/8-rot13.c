@@ -8,7 +8,7 @@ char *rot13(char *s)
 {
 	char key[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char rot[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
-	int i = 0, x = 0;;
+	int i = 0, x = 0;
 
 	while (*(s + i) != '\0')
 	{
@@ -19,11 +19,10 @@ char *rot13(char *s)
 				*(s + i) = rot[x];
 				break;
 			}
-			x++; 
+			x++;
 		}
 		x = 0;
 		i++;
 	}
-
 	return (s);
 }

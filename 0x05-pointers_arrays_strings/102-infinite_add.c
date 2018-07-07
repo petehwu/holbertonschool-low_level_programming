@@ -5,7 +5,7 @@
 void rev_string(char *n)
 {
 	int i = 0, j = 0;
-	char temp = '';
+	char temp;
 
 	while (*(n + i) != '\0')
 		i++;

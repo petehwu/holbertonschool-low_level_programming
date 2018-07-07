@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main(void)
+{
+  int n;
+  int a[5];
+  double c;
+  char b;
+  int *p;
+  int *s;
+  int z;
+  char x;
+  char *y;
+  int *e;
+
+  a[2] = 1024;
+  p = &n;
+  /*
+   * write your line of code here...
+   * Remember:
+   * - you are not allowed to use a
+   * - you are not allowed to modify p
+   * - only one statement
+   * - you are not allowed to code anything else than this line of code
+   */
+  printf("address of n: %p\n", &n);
+  printf("address of z: %p\n", &z);
+  printf("address of p: %p\n", &p);
+  printf("address of s: %p\n", &s);
+  printf("address of e: %p\n", &e);
+  printf("address of y: %p\n", &y);
+  printf("address of a: %p\n", &a);
+  printf("address of x: %p\n", &x);
+  printf("address of b: %p\n", &b);
+  printf("address of c: %p\n", &c);
+  *(p + 5) = 98;
+  /* ...so that this prints 98\n */
+  printf("a[2] = %d\n", a[2]);
+  return (0);
+}

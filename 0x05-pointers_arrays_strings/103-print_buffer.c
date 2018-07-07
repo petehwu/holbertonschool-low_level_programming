@@ -37,6 +37,7 @@ void print_buffer(char *b, int size)
 			else
 			{
 				tempstr[k] = '\0';
+				break;
 			}
 		}
 		if (k == 11)

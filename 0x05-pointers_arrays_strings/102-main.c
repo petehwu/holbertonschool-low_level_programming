@@ -13,6 +13,7 @@ int main(void)
         char r[100];
         char r2[10];
         char r3[11];
+	char r4[3];
         char *res;
 
         res = infinite_add(n, m, r, 100);
@@ -22,11 +23,12 @@ int main(void)
         }
         else
         {
-                printf("%s + %s = %s\n", n, m, res);
+                printf("%s + %s = %s", n, m, res);
+		printf("\n");
         }
-        n = "1234567890";
-        m = "1";
-        res = infinite_add(n, m, r2, 10);
+        n = "98";
+        m = "2";
+        res = infinite_add(n, m, r4, 3);
         if (res == 0)
         {
                 printf("Error\n");
@@ -108,7 +110,8 @@ int main(void)
         }
         else
         {
-                printf("%s + %s = %s\n", n, m, res);
+                printf("%s + %s = %s", n, m, res);
+		printf("\n");
         }
         n = "123456789";
         m = "2";
@@ -119,18 +122,21 @@ int main(void)
         }
         else
         {
-                printf("%s + %s = %s\n", n, m, res);
+                printf("%s + %s = %s", n, m, res);
+		printf("\n");
         }
-        n = "1";
+        n = "9";
         m = "2";
-        res = infinite_add(n, m, r2, 1);
+        res = infinite_add(n, m, r2, 3);
         if (res == 0)
         {
                 printf("Error\n");
         }
         else
         {
-                printf("%s + %s = %s\n", n, m, res);
+                printf("%s + %s = %s", n, m, res);
+		printf("\n");
+
         }
         return (0);
 }

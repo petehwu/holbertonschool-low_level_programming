@@ -16,6 +16,10 @@ File | Description
 6-cap\_string.c | capitalizes all words
 7-leet.c | encodes a string to 1337
 8-rot13.c | encodes a string using rot13
+100-print\_number.c | prints an integer number to stdout
+101-magic.c | add one line of code to change a value in an array to 98
+102-infinite\_add.c | add 2 numbers together
+103-print\_buffer.c | prints n bytes from the buffer using special formatting
 
 ### Author
 Peter Wu  

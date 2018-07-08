@@ -8,8 +8,8 @@
 void print_buffer(char *b, int size)
 {
 	int i = 0, j = 0, k = 0;
-	char tempstr[11];
-	char c;
+	unsigned char tempstr[11];
+	unsigned char c;
 
 	if (size <= 0)
 		printf("\n");
@@ -19,9 +19,14 @@ void print_buffer(char *b, int size)
 		for (j = 0; j < 10; j++)
 		{
 			if ((i + j) < size)
-				printf("%02x", *(b + i + j));
+			{
+				c = *(b + i + j);
+				printf("%02x", c);
+			}
 			else
+			{
 				printf("  ");
+			}
 			if (j % 2 != 0)
 				printf(" ");
 		}
@@ -30,7 +35,7 @@ void print_buffer(char *b, int size)
 			if ((i + k) < size)
 			{
 				c = *(b + i + k);
-				if (c < 32)
+				if (c < 32 || c > 126)
 					c = '.';
 				tempstr[k] = c;
 			}

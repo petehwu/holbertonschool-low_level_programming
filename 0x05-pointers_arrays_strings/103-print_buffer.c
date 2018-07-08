@@ -35,7 +35,7 @@ void print_buffer(char *b, int size)
 			if ((i + k) < size)
 			{
 				c = *(b + i + k);
-				if (c < 32 || c > 126)
+				if (c < 32)
 					c = '.';
 				tempstr[k] = c;
 			}

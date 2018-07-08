@@ -45,8 +45,8 @@ void print_buffer(char *b, int size)
 				break;
 			}
 		}
-		if (k == 11)
-			tempstr[11] = '\0';
+		if (k == 10)
+			tempstr[10] = '\0';
 		printf("%s\n", tempstr);
 		i += 10;
 	}

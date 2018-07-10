@@ -7,7 +7,7 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	int i, j = 0, found = -1;
+	int i, j = 0, found = 0;
 	char firstchar;
 
 	firstchar = needle[0];
@@ -15,11 +15,14 @@ char *_strstr(char *haystack, char *needle)
 	{
 		if (haystack[i] == firstchar)
 		{
-			for (j = 0; needle[j] != 0; j++, i++)
+			for (j = 0; needle[j] != '\0'; i++, j++)
 			{
-				if (needle[j] != haystack[i])
+				if (needle[j] != haystack[i] || haystack[i] == '\0')
+				{
 					break;
+				}
 			}
+			printf("%c\n", needle[j]);
 			if (needle[j] == '\0')
 			{
 				found = 1;
@@ -27,9 +30,15 @@ char *_strstr(char *haystack, char *needle)
 				break;
 			}
 		}
+		if (haystack[i] == 0)
+			break;
 	}
 	if (found == 1)
+	{
 		return (haystack + i);
+	}
 	else
+	{
 		return ('\0');
+	}
 }

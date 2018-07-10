@@ -22,7 +22,6 @@ char *_strstr(char *haystack, char *needle)
 					break;
 				}
 			}
-			printf("%c\n", needle[j]);
 			if (needle[j] == '\0')
 			{
 				found = 1;

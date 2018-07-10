@@ -10,6 +10,8 @@ char *_strstr(char *haystack, char *needle)
 	int i, j = 0, found = 0;
 	char firstchar;
 
+	if (*needle == 0)
+		return (haystack);
 	firstchar = needle[0];
 	for (i = 0; haystack[i] != 0; i++)
 	{

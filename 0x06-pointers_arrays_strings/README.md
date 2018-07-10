@@ -1,11 +1,11 @@
-### 0x06. C - Even more pointers, arrays and strings
+## 0x06. C - Even more pointers, arrays and strings
 
-#### Description  
+### Description  
 Learn to use pointer to pointers and multidimensional arrays and common C standard library function to manipulate strings
 
 ### Files
+File | Description
 ---|---
-File|Description
 0-memset.c | fills memory with a constant
 1-memcpy.c | function to copy memory area
 2-strchr.c | function to locate a chararacter in string

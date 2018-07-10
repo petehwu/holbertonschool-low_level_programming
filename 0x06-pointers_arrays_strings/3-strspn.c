@@ -6,7 +6,7 @@
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	int i, j, sub, found = 0;
+	int i, j;
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
@@ -18,18 +18,5 @@ unsigned int _strspn(char *s, char *accept)
 		if (accept[j] == '\0')
 			break;
 	}
-	sub = i;
-	for (j = 0; accept[j] != '\0'; j++)
-	{
-		for (i = 0; i <= sub; i++)
-		{
-			if (accept[j] == s[i])
-				found++;
-		}
-
-	}
-	if (found >= j)
-		return (sub);
-	else
-		return (0);
+	return (i);
 }

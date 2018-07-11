@@ -1,0 +1,13 @@
+/**
+ * _strlen_recursion - count length of strength
+ * @s: string to count
+ * Return: length of string
+ */
+int _strlen_recursion(char *s)
+{
+	int len = 0;
+
+	if (*s)
+		len = _strlen_recursion(s + 1) + 1;
+	return (len);
+}

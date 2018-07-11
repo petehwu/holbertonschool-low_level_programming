@@ -21,7 +21,7 @@ int factorial(int n)
 		if (n > 1)
 			val =  factorial(n - 1);
 		tot = n * val;
-		return(tot);
+		return (tot);
 	}
 
 }

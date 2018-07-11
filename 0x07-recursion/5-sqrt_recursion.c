@@ -6,13 +6,13 @@
  */
 int do_calc(int n, int c)
 {
-	int found = 0;
+	int found = -1;
 
 	if (c  < n / 2)
 		found = do_calc(n, c + 1);
 	if (c * c == n)
 		return (c);
-	else if (found > 0)
+	else if (found >= 0)
 		return (found);
 	else
 		return (-1);
@@ -24,5 +24,8 @@ int do_calc(int n, int c)
  */
 int _sqrt_recursion(int n)
 {
-	return (do_calc(n, 0));
+	if (n == 0)
+		return (0);
+	else
+		return (do_calc(n, 1));
 }

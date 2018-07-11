@@ -6,14 +6,6 @@ Learning about Reursion in C
 #### Files
 File | Description
 ---|---
-0-puts\_recursion### 0x07. C - Recursion
-
-#### Description  
-Learning about Reursion in C
-
-#### Files
-File | Description
----|---
 0-puts\_recursion.c | prints a string using recursion
 1-print\_rev\_recursion.c | print a string in reverse
 2-strlen\_recursion.c | return length of string

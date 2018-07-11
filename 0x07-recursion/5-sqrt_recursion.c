@@ -8,7 +8,7 @@ int do_calc(int n, int c)
 {
 	int found = -1;
 
-	if (c  < n / 2)
+	if (c  < n / 2 && c * c < n)
 		found = do_calc(n, c + 1);
 	if (c * c == n)
 		return (c);

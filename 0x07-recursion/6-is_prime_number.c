@@ -24,14 +24,14 @@ int do_calc(int n, int c)
  */
 int check_prime(int n, int s)
 {
-	int val = 0;
+	int val = 1;
 
 	if (n % s != 0 && s > 2)
 		val = check_prime(n, s - 1);
-	if (val == 1 || n % s == 0)
-		return (1);
-	else
+	if (val == 0 || n % s == 0)
 		return (0);
+	else
+		return (1);
 }
 
 /**
@@ -41,14 +41,10 @@ int check_prime(int n, int s)
  */
 int is_prime_number(int n)
 {
-	int r, s;
+	int s;
 
 	if (n <= 1)
 		return (0);
 	s = do_calc(n, 1);
-	r = check_prime(n, s);
-	if (r == 0)
-		return (1);
-	else
-		return (0);
+	return (check_prime(n, s));
 }

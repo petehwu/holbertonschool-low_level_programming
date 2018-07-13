@@ -11,6 +11,7 @@ File | Description
 2-args.c | prints the arguments passed in to program
 3-mul.c | multiplies 2 numbers
 4-add.c | add positive numbers
+holberton.h | header file
 
 #### Author
 Peter Wu

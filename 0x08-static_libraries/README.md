@@ -9,6 +9,7 @@ File | Description
 ---|---
 libholberton.a | library file
 holberton.h | header file
+create\_static\_lib.sh | bash script to create a library file
 
 #### Author  
 Peter Wu

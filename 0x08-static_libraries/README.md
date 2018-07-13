@@ -5,8 +5,8 @@ Learn the difference between static and dynamic library and how to create a stat
 
 #### Files
 
----|---
 File | Description
+---|---
 libholberton.a | library file
 holberton.h | header file
 

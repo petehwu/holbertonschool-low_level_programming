@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "holberton.h"
 /**
- * is_numeric - determines if parameter is all numeric
+ * is_not_numeric - determines if parameter is all numeric
  * @s: pointer to first character in string
  * Return: 1 if numeric, 0 otherwise
  */
@@ -15,7 +16,7 @@ int is_not_numeric(char *s)
 	}
 	return (0);
 }
-/** 
+/**
  * main - given some cents, return minmum number of
  *         coins required
  * @argc: number of parameters
@@ -23,7 +24,7 @@ int is_not_numeric(char *s)
  * Return: 1 if invalid parms, otherwie 0
  */
 
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int c[4] = {25, 10, 5, 2};
 	int totcoins = 0, i;
@@ -54,9 +55,8 @@ int main (int argc, char *argv[])
 		}
 		while (tot--)
 			totcoins++;
-			
+
 		printf("%d\n", totcoins);
 	}
 	return (0);
-		
 }

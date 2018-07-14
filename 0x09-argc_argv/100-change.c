@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
 		for (i = 0; i < 4 && tot > 0; i++)
 		{
 			coins = tot / c[i];
-			tot = tot - (c[i] * coins);
+			tot -= (c[i] * coins);
 			totcoins += coins;
 		}
 		totcoins += tot;

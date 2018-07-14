@@ -10,20 +10,19 @@
 int main(int argc, char *argv[])
 {
 	int tot = 0, x = 0;
-	char *p;
 
 	while (--argc)
 	{
-		p = *(++argv);
-		for (x = 0; *(p + x); x++)
+		argv++;
+		for (x = 0; *(*argv + x); x++)
 		{
-			if (p[x] - '0' < 0 || p[x] - '0' > 9)
+			if (*(*argv + x) - '0' < 0 || *(*argv + x) - '0' > 9)
 			{
 				printf("Error\n");
 				return (1);
 			}
 		}
-		tot += atoi(p);
+		tot += atoi(*argv);
 	}
 	printf("%d\n", tot);
 	return (0);

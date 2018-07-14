@@ -53,9 +53,7 @@ int main(int argc, char *argv[])
 			tot = tot - (c[i] * coins);
 			totcoins += coins;
 		}
-		while (tot--)
-			totcoins++;
-
+		totcoins += tot;
 		printf("%d\n", totcoins);
 	}
 	return (0);

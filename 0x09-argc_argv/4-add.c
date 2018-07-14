@@ -9,15 +9,15 @@
 
 int main(int argc, char *argv[])
 {
-	int tot = 0, i = 0;
+	int tot = 0, x = 0;
 	char *p;
 
 	while (--argc)
 	{
 		p = *(++argv);
-		for (i = 0; *(p + i); i++)
+		for (x = 0; *(p + x); x++)
 		{
-			if (p[i] != '-' && (p[i] - '0' < 0 || p[i] - '0' > 9))
+			if (p[x] - '0' < 0 || p[x] - '0' > 9)
 			{
 				printf("Error\n");
 				return (1);
@@ -26,4 +26,5 @@ int main(int argc, char *argv[])
 		tot += atoi(p);
 	}
 	printf("%d\n", tot);
+	return (0);
 }

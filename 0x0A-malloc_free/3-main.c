@@ -49,19 +49,5 @@ int main(void)
     grid[3][4] = 402;
     print_grid(grid, 6, 4);
     printf("\n");
-    grid = alloc_grid(10, 8);
-    if (grid == NULL)
-    {
-        return (1);
-    }
-    print_grid(grid, 10, 8);
-    printf("\n");
-    grid = alloc_grid(0, 8);
-    if (grid == NULL)
-    {
-        return (1);
-    }
-    print_grid(grid, 0, 8);
-    printf("\n");
     return (0);
 }

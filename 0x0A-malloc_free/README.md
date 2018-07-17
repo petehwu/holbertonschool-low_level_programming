@@ -1,10 +1,10 @@
-#### 0x0A. C -malloc, free
+## 0x0A. C -malloc, free
 
-### Description
+#### Description
 Learn the difference between automatic and dynamic allocation  
 Learn about malloc and free and valgrind
 
-### Files
+#### Files
 File | Description
 ---|---
 0-create\_array.c | creates an array using malloc
@@ -14,5 +14,5 @@ File | Description
 4-free\_grid.c | write a function that frees a 2 dim array
 5-argstostr.c | function to concatenate all arguments 
 
-### Author
+#### Author
 Peter Wu

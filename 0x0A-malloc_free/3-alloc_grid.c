@@ -21,6 +21,7 @@ int **alloc_grid(int width, int height)
 		cols = malloc(sizeof(int) * width);
 		if (!cols)
 		{
+			free(rows);
 			return (NULL);
 		}
 		else

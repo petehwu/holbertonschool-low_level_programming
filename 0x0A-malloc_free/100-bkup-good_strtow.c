@@ -20,8 +20,6 @@ char **strtow(char *str)
 		}
 		i++;
 	}
-	if (numwords == 0)
-		return (NULL);
 	numwords += 1;
 	rows = malloc(sizeof(char *) * numwords);
 	if (!rows)
@@ -37,12 +35,7 @@ char **strtow(char *str)
 		wordlen += 1;
 		cols = malloc(sizeof(char) * wordlen);
 		if (!cols)
-		{
-			for (x = z - 1; x >= 0; x--)
-				free(rows[x]);
-			free(rows);
 			return (NULL);
-		}
 		for (x = 0; x < (wordlen - 1);  x++)
 		{
 			*(cols + x) = *(str++);

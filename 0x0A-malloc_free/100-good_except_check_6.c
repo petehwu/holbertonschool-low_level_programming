@@ -20,8 +20,6 @@ char **strtow(char *str)
 		}
 		i++;
 	}
-	if (numwords == 0)
-		return (NULL);
 	numwords += 1;
 	rows = malloc(sizeof(char *) * numwords);
 	if (!rows)

@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <stdio.h>
 /**
  * strtow - function to split string to words
  * @str: input string
@@ -10,18 +9,16 @@ char **strtow(char *str)
 	int numwords = 0, i = 0, wordlen = 0, z = 0, x = 0;
 	char **rows, *cols;
 
-
 	while (*(str + i))
 	{
 		if (*(str + i) != ' ')
 		{
 			if (*(str + i + 1) == ' ' || *(str + i + 1) == 0)
-				numwords +=1;
+				numwords += 1;
 		}
 		i++;
 	}
 	numwords += 1;
-	printf("numwords %d\n", numwords);
 	rows = malloc(sizeof(char *) * numwords);
 	if (!rows)
 		return (NULL);
@@ -31,9 +28,9 @@ char **strtow(char *str)
 		while (*str == ' ' && *str)
 			str++;
 		wordlen = 0;
-		while (*(str + wordlen) != ' ' && *(str + wordlen)) 
+		while (*(str + wordlen) != ' ' && *(str + wordlen))
 			wordlen += 1;
-		wordlen +=1;
+		wordlen += 1;
 		cols = malloc(sizeof(char) * wordlen);
 		if (!cols)
 			return (NULL);
@@ -45,7 +42,6 @@ char **strtow(char *str)
 		*(rows + z) = cols;
 		if (z < (numwords - 1))
 			z++;
-		printf("z: %d\n", z);
 	}
 	*(rows + z) = NULL;
 	return (rows);

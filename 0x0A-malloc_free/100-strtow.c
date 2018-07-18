@@ -9,6 +9,8 @@ char **strtow(char *str)
 	int numwords = 0, i = 0, wordlen = 0, z = 0, x = 0;
 	char **rows, *cols;
 
+	if (!str || !*str)
+		return (NULL);
 	while (*(str + i))
 	{
 		if (*(str + i) != ' ')

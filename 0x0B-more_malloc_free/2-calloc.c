@@ -1,5 +1,15 @@
 #include <stdlib.h>
 /**
+ * _memset - sets memory for certain bytes to 9
+ * @p: beginning address
+ * @size: size of bytes to set
+ */
+void _memset(char * p, unsigned int size)
+{
+	while (size--)
+		*p++ = 0;
+}
+/**
  * _calloc - allocates memory for array
  * @nmemb: number of elements
  * @size: number of bytes per element
@@ -8,7 +18,6 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void *ptr;
-	char *tptr;
 	unsigned int totsize;
 
 	if (!nmemb || !size)
@@ -17,8 +26,6 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	ptr = malloc(totsize);
 	if (!ptr)
 		return (NULL);
-	tptr = ptr;
-	while (totsize--)
-		*tptr++ = 0;
+	_memset(ptr, totsize);
 	return (ptr);
 }

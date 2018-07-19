@@ -4,7 +4,7 @@
  * @p: beginning address
  * @size: size of bytes to set
  */
-void _memset(char * p, unsigned int size)
+void _memset(char *p, unsigned int size)
 {
 	while (size--)
 		*p++ = 0;

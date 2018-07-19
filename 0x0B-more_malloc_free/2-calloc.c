@@ -20,6 +20,5 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	tptr = ptr;
 	while (totsize--)
 		*tptr++ = 0;
-
 	return (ptr);
 }

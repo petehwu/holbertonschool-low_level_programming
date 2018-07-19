@@ -11,10 +11,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *p;
 	unsigned int i, tot, s2len = 0, s1len = 0, index = 0;
 
-	while (*(s1 + s1len))
-		s1len++;
-	while (*(s2 + s2len))
-		s2len++;
+	if (s1)
+		while (*(s1 + s1len))
+			s1len++;
+	if (s2)
+		while (*(s2 + s2len))
+			s2len++;
 	s2len++;
 	s2len = (n < s2len) ? n : s2len;
 	tot = s1len + s2len;

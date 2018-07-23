@@ -47,10 +47,16 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	cname = make_copy(name);
 	if (!cname && doggy)
+	{
 		free(doggy);
+		return (NULL);
+	}
 	cowner = make_copy(owner);
 	if (!cowner && cname)
+	{
 		free(cname);
+		return (NULL);
+	}
 	doggy->age = age;
 	doggy->name = cname;
 	doggy->owner = cowner;

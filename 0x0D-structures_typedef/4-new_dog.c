@@ -16,6 +16,8 @@ char *make_copy(char *p)
 		i++;
 	i++;
 	np = malloc(i);
+	if (!np)
+		return (NULL);
 	i--;
 	while (i >= 0)
 	{
@@ -37,8 +39,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog_t *doggy;
 
 	doggy = malloc(sizeof(dog_t));
-	if (!doggy)
+	if (!doggy || !name || !owner)
+	{
+		if (doggy)
+			free(doggy);
 		return (NULL);
+	}
 	cname = make_copy(name);
 	cowner = make_copy(owner);
 	doggy->age = age;

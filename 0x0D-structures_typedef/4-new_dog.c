@@ -3,11 +3,11 @@
 /**
  * make_copy - copies a variable
  * @p: pointer to variable to be copied
- * Return: pointer to new copy 
+ * Return: pointer to new copy
  */
 char *make_copy(char *p)
 {
-	int i;
+	int i = 0;
 	char *np;
 
 	if (!p)
@@ -33,21 +33,16 @@ char *make_copy(char *p)
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	char __attribute__((unused)) *cname;
-	char __attribute__((unused)) *cowner;
+	char *cname, *cowner;
 	dog_t *doggy;
 
 	doggy = malloc(sizeof(dog_t));
-	cname = malloc(sizeof(char *));
-	cowner = malloc(sizeof(char *));
-	if (!doggy)
+	if (!doggy || !owner || !name)
 		return (NULL);
-	doggy->name = name;
+	cname = make_copy(name);
+	cowner = make_copy(owner);
+	doggy->name = cname;
 	doggy->age = age;
-	doggy->owner = owner;
-	if (!name)
-		cname = make_copy(name);
-	if (!owner)
-		cowner = make_copy(owner);
+	doggy->owner = cowner;
 	return (doggy);
 }

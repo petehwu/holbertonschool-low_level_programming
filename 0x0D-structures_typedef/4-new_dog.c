@@ -37,12 +37,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog_t *doggy;
 
 	doggy = malloc(sizeof(dog_t));
-	if (!doggy || !owner || !name)
+	if (!doggy)
 		return (NULL);
 	cname = make_copy(name);
 	cowner = make_copy(owner);
-	doggy->name = cname;
 	doggy->age = age;
+	doggy->name = cname;
 	doggy->owner = cowner;
 	return (doggy);
 }

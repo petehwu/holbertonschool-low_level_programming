@@ -9,13 +9,7 @@
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	struct dog *d2;
-
-	d2 = malloc(sizeof(struct dog));
-	if (!d2)
-		exit(0);
-	d2->name = name;
-	d2->age = age;
-	d2->owner = owner;
-	*d = *d2;
+	d->name = name;
+	d->age = age;
+	d->owner = owner;
 }

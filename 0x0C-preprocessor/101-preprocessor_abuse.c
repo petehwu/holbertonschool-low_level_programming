@@ -1,1 +1,1 @@
-#if (1) puts("Hello, Holberton");
+#error "Hello, Holberton\n";

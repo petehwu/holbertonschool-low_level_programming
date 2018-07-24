@@ -1,1 +1,1 @@
-#include "/dev/tty"
+#error "Hello, Holberton\n"

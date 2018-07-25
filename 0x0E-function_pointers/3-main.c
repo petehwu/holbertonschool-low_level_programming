@@ -1,6 +1,7 @@
 #include "3-calc.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 /**
  * main - main function
  * @argc: number of parameters
@@ -20,7 +21,8 @@ int main(int argc, char **argv)
 	num1 = atoi(*(argv + 1));
 	op = *(argv + 2);
 	num2 = atoi(*(argv + 3));
-	if (*op != '+' && *op != '-' && *op != '*' && *op != '/' && *op != '%')
+	if (strcmp(op, "+") && strcmp(op, "-") && strcmp(op, "*") && strcmp(op, "/") \
+			&& strcmp(op, "%"))
 	{
 		printf("Error\n");
 		exit(99);

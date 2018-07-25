@@ -21,12 +21,6 @@ int main(int argc, char **argv)
 	num1 = atoi(*(argv + 1));
 	op = *(argv + 2);
 	num2 = atoi(*(argv + 3));
-	if (strcmp(op, "+") && strcmp(op, "-") && strcmp(op, "*") && strcmp(op, "/") \
-			&& strcmp(op, "%"))
-	{
-		printf("Error\n");
-		exit(99);
-	}
 	if ((*op == '/' || *op == '%') && num2 == 0)
 	{
 		printf("Error\n");

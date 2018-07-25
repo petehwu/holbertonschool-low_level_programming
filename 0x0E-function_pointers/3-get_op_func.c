@@ -1,5 +1,7 @@
 #include "3-calc.h"
 #include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
 
 /**
  * get_op_func - wrapper function to call correct math operation functions
@@ -20,9 +22,10 @@ int (*get_op_func(char *s))(int, int)
 
 	while (i < (int) (sizeof(ops) / sizeof(*ops)) - 1)
 	{
-		if (*(ops[i].op) == *s)
-			break;
+		if (!strcmp(ops[i].op, s))
+			return (ops[i].f);
 		i++;
 	}
-	return (ops[i].f);
+	printf("Error\n");
+	exit(99);
 }

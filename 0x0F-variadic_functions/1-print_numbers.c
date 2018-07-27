@@ -17,6 +17,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		if (i < n - 1)
 			printf("%c ", separator ? *separator : 0);
 	}
+	va_end(numlist);
 	printf("\n");
 
 }

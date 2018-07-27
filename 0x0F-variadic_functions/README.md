@@ -1,9 +1,9 @@
-####0x0F. C - Variadic functions
+#### 0x0F. C - Variadic functions
 
-###Description
+### Description
 Learn about variadic functions and how to use va\_start, va\_arg, va\_end to access parameters
 
-###Files
+### Files
 File | Description
 ---|---
 0-sum\_them\_all.c | sums all values in parm list
@@ -11,5 +11,5 @@ File | Description
 2-print\_strings.c | prints all the strings in list
 3-print\_all.c | prints anything
 
-###Author
+### Author
 Peter Wu

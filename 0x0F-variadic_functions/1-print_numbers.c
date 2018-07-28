@@ -14,8 +14,8 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	for (i = 0; i < n; i++)
 	{
 		printf("%d", va_arg(numlist, int));
-		if (i < n - 1)
-			printf("%c ", separator ? *separator : 0);
+		if (i < (n - 1))
+			printf("%s", separator ? separator : "");
 	}
 	va_end(numlist);
 	printf("\n");

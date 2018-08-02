@@ -5,24 +5,32 @@
  * @str: element to add
  * Return: pointer to the linked list
  */
+#include <stdio.h>
 list_t *add_node(list_t **head, const char *str)
 {
 	list_t *tmp_node;
 	char *tmp_str;
 	unsigned int  str_len = 0;
 
-	if (!str)
-		return (NULL);
+	tmp_str = strdup(str);
 	tmp_node = malloc(sizeof(list_t));
 	if (!tmp_node)
 		return (NULL);
-	while (*(str + str_len))
-		str_len++;
-	tmp_str = strdup(str);
 	if (!tmp_str)
-		return (NULL);
-	tmp_node->len = str_len;
-	tmp_node->str = tmp_str;
+	{
+		tmp_node->str = NULL;
+		tmp_node->len = 0;
+	}
+	else
+	{
+		while (*(str + str_len))
+			str_len++;
+		if (!str_len)
+			tmp_node->str = NULL;
+		else
+			tmp_node->str = tmp_str;
+		tmp_node->len = str_len;
+	}
 	tmp_node->next = *head;
 	*head = tmp_node;
 	return (*head);

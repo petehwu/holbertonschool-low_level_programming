@@ -5,7 +5,6 @@
  * @str: element to add
  * Return: pointer to the linked list
  */
-#include <stdio.h>
 list_t *add_node(list_t **head, const char *str)
 {
 	list_t *tmp_node;

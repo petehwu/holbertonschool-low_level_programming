@@ -9,24 +9,20 @@ list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *new_node, *tmp_node;
 	unsigned int str_len = 0;
-	char *new_str;
+	char *new_str = NULL;
 
 	if (str)
 	{
 		new_str = strdup(str);
-	}
-	else
-	{
-		new_str = NULL;
+		if (new_str)
+		{
+			while (*(new_str + str_len))
+				str_len++;
+		}
 	}
 	new_node = malloc(sizeof(list_t));
 	if (!new_node)
 		return (NULL);
-	if (new_str)
-	{
-		while (*(new_str + str_len))
-			str_len++;
-	}
 	new_node->str = new_str;
 	new_node->len = str_len;
 	new_node->next = NULL;

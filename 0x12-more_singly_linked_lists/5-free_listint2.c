@@ -5,12 +5,20 @@
  */
 void free_listint2(listint_t **head)
 {
+	listint_t *tmp_node;
+
 	if (*head)
 	{
-		if ((*head)->next)
-			free_listint2(&((*head)->next));
-		free(*head);
-		*head = NULL;
+		tmp_node = (*head)->next;
+		while (*head)
+		{
+			free(*head);
+			*head = tmp_node;
+			if (*head)
+				tmp_node = (*head)->next;
+		}
+
 	}
+	*head = NULL;
 
 }

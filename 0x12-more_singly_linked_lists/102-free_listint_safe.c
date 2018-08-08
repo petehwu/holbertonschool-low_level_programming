@@ -58,8 +58,8 @@ int find_node2(list_t *head, listint_t *addr)
 
 
 /**
- * print_listint_safe - prints a list allowing loops
- * @head: pointer to head of list
+ * free_listint_safe - frees a list allowing loops
+ * @h: pointer to pointer of head of list
  * Return: number of nodes in list
  */
 size_t free_listint_safe(listint_t **h)
@@ -89,7 +89,6 @@ size_t free_listint_safe(listint_t **h)
 			}
 			else
 			{
-				free(tempnode);
 				tempnode = NULL;
 				break;
 			}

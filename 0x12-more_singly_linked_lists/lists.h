@@ -19,6 +19,20 @@ typedef struct listint_s
 } listint_t;
 
 /**
+ * struct list_s - singly linked list
+ * @curr: pointer to current node
+ * @next: pointer to the next node
+ *
+ * Description: singly linked list node structure
+ * for Holberton project
+ */
+typedef struct list_s
+{
+	const struct listint_s *curr;
+	struct list_s *next;
+} list_t;
+
+/**
  * print_listint - prints all elements of integer list
  * @h: list of integers to print
  * Return: number of nodes in list
@@ -106,4 +120,10 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index);
  */
 listint_t *reverse_listint(listint_t **head);
 
+/**
+ * print_listint_safe - prints a list even if it loops
+ * @head: head of list
+ * Return: number of nodes in list
+ */
+size_t print_listint_safe(const listint_t *head);
 #endif

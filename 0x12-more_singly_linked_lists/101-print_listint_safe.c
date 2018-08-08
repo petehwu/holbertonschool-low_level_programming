@@ -33,7 +33,7 @@ list_t *add_node(list_t **head, const listint_t *curr)
 
 }
 
-/*
+/**
  * find_node - looks through a list and see if address already exist
  * @head: head of list
  * @addr: address to look for in list
@@ -78,7 +78,10 @@ size_t print_listint_safe(const listint_t *head)
 			if (!find_node(newlist, tempnode))
 			{
 				if (!add_node(&newlist, tempnode))
+				{
+					free_list(newlist);
 					exit(98);
+				}
 				printf("[%p] %d\n", (void *) tempnode, tempnode->n);
 				node_count++;
 			}
@@ -90,6 +93,7 @@ size_t print_listint_safe(const listint_t *head)
 			tempnode = tempnode->next;
 		}
 		free_list(newlist);
+		newlise = NULL;
 	}
 	return (node_count);
 }

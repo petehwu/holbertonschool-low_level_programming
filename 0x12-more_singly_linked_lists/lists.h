@@ -149,5 +149,33 @@ list_t *add_node(list_t **head, const listint_t *curr);
  */
 int find_node(const list_t *head, const listint_t *addr);
 
+/**
+ * free_litint_safe - frees a list with loop
+ * @h:  pointer to a pointer of head of list
+ * Return: number of nodes freed
+ */
+size_t free_listint_safe(listint_t **h);
 
+
+/**
+ * free_list2 - frees memory for list
+ * @head: pointer to head of list
+ */
+void free_list2(list_t *head);
+
+/**
+ * add_node2 - adds a new node to head of list
+ * @head: pointer to pointer of head of node
+ * @curr: pointer to current node
+ * Return: list with new node added
+ */
+list_t *add_node2(list_t **head, listint_t *curr);
+
+/**
+ * find_node2 - looks through a list and see if address already exist
+ * @head: head of list
+ * @addr: address to look for in list
+ * Return: 1 if found, 0 otherwise
+ */
+int find_node2(list_t *head, listint_t *addr);
 #endif

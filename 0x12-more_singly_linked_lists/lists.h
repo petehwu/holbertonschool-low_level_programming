@@ -141,7 +141,7 @@ void free_list(list_t *head);
  */
 list_t *add_node(list_t **head, const listint_t *curr);
 
-/*
+/**
  * find_node - looks through a list and see if address already exist
  * @head: head of list
  * @addr: address to look for in list

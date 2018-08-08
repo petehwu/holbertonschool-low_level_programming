@@ -126,4 +126,28 @@ listint_t *reverse_listint(listint_t **head);
  * Return: number of nodes in list
  */
 size_t print_listint_safe(const listint_t *head);
+
+/**
+ * free_list - frees memory for list
+ * @head: pointer to head of list
+ */
+void free_list(list_t *head);
+
+/**
+ * add_node - adds a new node to head of list
+ * @head: pointer to pointer of head of node
+ * @curr: pointer to current node
+ * Return: list with new node added
+ */
+list_t *add_node(list_t **head, const listint_t *curr);
+
+/*
+ * find_node - looks through a list and see if address already exist
+ * @head: head of list
+ * @addr: address to look for in list
+ * Return: 1 if found, 0 otherwise
+ */
+int find_node(const list_t *head, const listint_t *addr);
+
+
 #endif

@@ -93,7 +93,7 @@ size_t print_listint_safe(const listint_t *head)
 			tempnode = tempnode->next;
 		}
 		free_list(newlist);
-		newlise = NULL;
+		newlist = NULL;
 	}
 	return (node_count);
 }

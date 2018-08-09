@@ -23,8 +23,6 @@ int get_bit(unsigned long int n, unsigned int index)
 	else if (index > digits)
 		return (0);
 	temp = temp >> index;
-/*	for (i = 0 ; i < index; i++)
-		temp = temp >> 1; */
 	return (temp & 1);
 
 

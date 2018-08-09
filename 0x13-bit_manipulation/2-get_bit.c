@@ -3,7 +3,7 @@
  * get_bit - returns bit value at given index
  * @n: number
  * @index: index position to get
- * Return : bit value at given position
+ * Return: bit value at given position
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
@@ -18,8 +18,10 @@ int get_bit(unsigned long int n, unsigned int index)
 	}
 	digits--;
 	temp = n;
-	if (index > digits)
+	if (index > sizeof(long int) * 8)
 		return (-1);
+	else if (index > digits)
+		return (0);
 	for (i = 0 ; i < index; i++)
 		temp = temp >> 1;
 	return (temp & 1);

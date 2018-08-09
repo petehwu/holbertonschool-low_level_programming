@@ -25,7 +25,7 @@ void print_binary(unsigned long int n);
  * get_bit - returns bit value at given index
  * @n: number
  * @index: index position to get
- * Return : bit value at given position
+ * Return: bit value at given position
  */
 int get_bit(unsigned long int n, unsigned int index);
 
@@ -55,7 +55,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m);
 
 /**
  * get_val - gets integer value based on binary position
- * @digit: index position of value
+ * @digits: index position of value
  * Return: numeric value
  */
 unsigned int get_val(int digits);

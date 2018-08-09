@@ -7,7 +7,7 @@
  */
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned int digits = 0, i = 0;
+	unsigned int digits = 0;
 	unsigned long int temp, temp2;
 
 	temp = *n;
@@ -19,14 +19,18 @@ int clear_bit(unsigned long int *n, unsigned int index)
 		digits++;
 	}
 	digits--;
-	temp = 1;
-	for (i = 0; i < digits; i++)
-	{
-		temp = (temp << 1) + 1;
-	}
-	temp2 = 1;
-	for (i = 0; i < index; i++)
-		temp2 = temp2 << 1;
+	temp = ~(1 << (digits + 1));
+	/*
+*	for (i = 0; i < digits; i++)
+	*{
+*		temp = (temp << 1) + 1;
+*	}
+	*/
+	temp2 = 1 << index;
+	/*
+	* for (i = 0; i < index; i++)
+	* temp2 = temp2 << 1;
+	*/
 	temp = temp ^ temp2;
 	if (index > sizeof(long int) * 8)
 		return (-1);

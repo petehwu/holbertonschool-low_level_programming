@@ -7,7 +7,7 @@
  */
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned int digits = 0, i = 0;
+	unsigned int digits = 0;
 	unsigned long int temp;
 
 	temp = *n;
@@ -20,8 +20,11 @@ int set_bit(unsigned long int *n, unsigned int index)
 	temp = 1;
 	if (index > sizeof(long int) * 8)
 		return (-1);
-	for (i = 0; i < index; i++)
-		temp = temp << 1;
+	temp = temp << index;
+	/*
+	* for (i = 0; i < index; i++)
+	*	temp = temp << 1;
+	*/
 	*n = *n | temp;
 	return (1);
 }

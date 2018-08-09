@@ -1,39 +1,35 @@
 #include "holberton.h"
 /**
- *  * print_binary - prints the binary representation of a number
- *   * @n: number to print
- *    */
+ *print_binary - prints the binary representation of a number
+ *@n: number to print
+ */
 void print_binary(unsigned long int n)
 {
-	unsigned long int val = 1;
-	int shift = 0;
+	unsigned long int temp;
+	int digits = 0;
 
-	if (n == 0)
+	if (!n)
 	{
 		_putchar('0');
 	}
 	else
 	{
-		while(n  >= val)
+		temp = n;
+		while (temp)
 		{
-			val = val << 1;
-			shift += 1;
+			temp = temp >> 1;
+			digits++;
 		}
-		val = val >> 1;
-
-		while (shift)
+		digits--;
+		temp = (n >> digits);
+		while (digits >= 0)
 		{
-			if (n >=  val)
-			{
-				_putchar ('1');
-				n = n - val;
-			}
+			if (temp & 1)
+				_putchar('1');
 			else
-			{
-				_putchar ('0');
-			}
-			val = val >> 1;
-			shift--;
+				_putchar('0');
+			digits--;
+			temp = n >> digits;
 		}
 	}
 

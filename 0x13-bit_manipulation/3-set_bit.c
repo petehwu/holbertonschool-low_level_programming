@@ -23,5 +23,5 @@ int set_bit(unsigned long int *n, unsigned int index)
 	for (i = 0; i < index; i++)
 		temp = temp << 1;
 	*n = *n | temp;
-	return (*n);
+	return (1);
 }

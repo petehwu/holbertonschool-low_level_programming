@@ -59,4 +59,10 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m);
  * Return: numeric value
  */
 unsigned int get_val(int digits);
+
+/**
+ * get_endianness - finds if system is bie endian or little endian
+ * Return: 0 if bi endian, 1 if little endian
+ */
+int get_endianness(void);
 #endif

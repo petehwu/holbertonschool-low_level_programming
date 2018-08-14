@@ -27,11 +27,10 @@ int main(int argc, char **argv)
 	if (nfd == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		close(ofd);	
+		close(ofd);
 		exit(99);
 	}
-	do
-	{
+	do {
 		bytes_read = read(ofd, buff, BUFF_SIZE);
 		if (bytes_read == -1)
 		{
@@ -49,8 +48,7 @@ int main(int argc, char **argv)
 			exit(99);
 		}
 
-	}
-	while (bytes_read > 0);
+	} while (bytes_read > 0);
 	if (close(ofd) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", ofd);
@@ -61,6 +59,6 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", nfd);
 		exit(100);
 	}
-	return(0);
+	return (0);
 
 }

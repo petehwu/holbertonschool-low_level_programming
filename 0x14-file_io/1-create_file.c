@@ -20,7 +20,6 @@ int create_file(const char *filename, char *text_content)
 	{
 		while (*(text_content + buffsize))
 			buffsize++;
-		buffsize++;
 		written = write(fd, text_content, buffsize);
 		if (written != buffsize)
 		{

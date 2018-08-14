@@ -39,13 +39,16 @@ int main(int argc, char **argv)
 			close(nfd);
 			exit(98);
 		}
-		bytes_written = write(nfd, buff, bytes_read);
-		if (bytes_written != bytes_read)
+		if (bytes_read > 0)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-			close(ofd);
-			close(nfd);
-			exit(99);
+			bytes_written = write(nfd, buff, bytes_read);
+			if (bytes_written != bytes_read)
+			{
+				dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+				close(ofd);
+				close(nfd);
+				exit(99);
+			}
 		}
 
 	} while (bytes_read > 0);

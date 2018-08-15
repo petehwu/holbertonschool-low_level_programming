@@ -20,14 +20,14 @@ int main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		dprintf(STDERR_FILENO, "Usage: elf_header elf_filename\n");
+		write(STDERR_FILENO, "Usage: elf_header elf_filename\n", 31);
 		exit(98);
 	}
 	fd = open(argv[1], O_RDONLY);
 	bytes_read = read(fd, buffer, 32);
 	if (bytes_read != 32)
 	{
-		dprintf(STDERR_FILENO, "Error: Cannot read ELF file\n");
+		write(STDERR_FILENO, "Error: Cannot read ELF file\n", 28);
 		exit(98);
 	}
 	close(fd);
@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 	{
 		if (elf[i] != buffer[i])
 		{
-			dprintf(STDERR_FILENO, "Error: Not ELF file\n");
+			write(STDERR_FILENO, "Error: Not ELF file\n", 20);
 			exit(98);
 		}
 

@@ -1,4 +1,9 @@
-#include "holberton.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
 /**
  * main - reads elf header
  * @argc: number of arguments
@@ -10,7 +15,8 @@ int main(int argc, char **argv)
 	int fd, i;
 	char buffer[32];
 	unsigned short typeval;
-	int mem32, abi_val;
+	unsigned int mem32 = 0;
+	int abi_val;
 	long long int mem64;
 	int bytes_read = 0;
 	char elf[4] = {127, 69, 76, 70};
@@ -81,7 +87,7 @@ int main(int argc, char **argv)
 	{
 		typeval = (buffer[16] << 8) + buffer[17];
 	}
-	switch(typeval) 
+	switch (typeval)
 	{
 		case 0:
 			printf("  %-35s%s\n", "Type:", "NONE (No file type");
@@ -110,8 +116,6 @@ int main(int argc, char **argv)
 		case 0xffff:
 			printf("  %-35s%s\n", "Type:", "HIPROC (Processor-specific)");
 			break;
-			
-
 	}
 	if (buffer[4] == 1)
 	{
@@ -120,10 +124,7 @@ int main(int argc, char **argv)
 		{
 			/*little endian*/
 			for (i = 27; i > 23; i--)
-			{
-				if (buffer[i] > 0)
-					mem32 +=  buffer[i] << (8 * (i - 24));
-			}
+				mem32 +=  buffer[i] << (8 * (i - 24));
 		}
 		else
 		{
@@ -139,16 +140,14 @@ int main(int argc, char **argv)
 		{
 			for (i = 31; i > 23; i--)
 			{
-				if (buffer[i] > 0)
-					mem64 += buffer[i] << (8 * (i - 24));
-				else
-					mem64 = mem64 >> 8;
+				mem64 += buffer[i] << (8 * (i - 24));
 			}
 		}
 		else
 		{
+
 			for (i = 24; i < 32; i++)
-				mem64 += buffer[i] << (8 * (32 - i));
+				mem64 += buffer[i] << (8 * (31 - i));
 		}
 		printf("  %-35s%p\n", "Entry point address:", (void *) mem64);
 	}

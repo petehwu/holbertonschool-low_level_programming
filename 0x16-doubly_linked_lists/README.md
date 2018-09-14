@@ -15,6 +15,7 @@ File | Description
 6-sum\_dlistint.c | returns the sum of all nodes in list
 7-insert\_dnodeint.c | inserts a new node at given position
 8-delete\_dnodeint.c | deletes a node at given position
+lists.h | header file
 
 ### Author
 Peter Wu

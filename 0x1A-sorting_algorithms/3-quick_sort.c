@@ -82,7 +82,7 @@ void swapper(int *array, size_t from, size_t to, size_t size)
 {
 	int tempval;
 
-	if (from != to)
+	if (from != to && array[from] != array[to])
 	{
 		tempval = array[from];
 		array[from] = array[to];

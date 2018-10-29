@@ -8,35 +8,27 @@
 void insertion_sort_list(listint_t **list)
 {
 	listint_t  *curnode = *list, *nextnode = NULL;
-	size_t nodes = 0;
 
+	if (!list || !*list || !(*list)->next)
+		return;
 	while (curnode)
 	{
-		nodes++;
-		curnode = curnode->next;
-	}
-	curnode = *list;
-	if (nodes > 1)
-	{
-		while (curnode)
+		nextnode = curnode->next;
+		if (nextnode && curnode->n > nextnode->n)
 		{
-			nextnode = curnode->next;
-			if (nextnode && curnode->n > nextnode->n)
-			{
-				curnode->next = nextnode->next;
-				nextnode->prev = curnode->prev;
-				nextnode->next = curnode;
-				curnode->prev = nextnode;
-				if (nextnode->prev)
-					nextnode->prev->next = nextnode;
-				else
-					*list = nextnode;
-				if (curnode->next)
-					curnode->next->prev = curnode;
-				print_list(*list);
-				nextnode = nextnode->prev ? nextnode->prev : *list;
-			}
-			curnode = nextnode;
+			curnode->next = nextnode->next;
+			nextnode->prev = curnode->prev;
+			nextnode->next = curnode;
+			curnode->prev = nextnode;
+			if (nextnode->prev)
+				nextnode->prev->next = nextnode;
+			else
+				*list = nextnode;
+			if (curnode->next)
+				curnode->next->prev = curnode;
+			print_list(*list);
+			nextnode = nextnode->prev ? nextnode->prev : *list;
 		}
+		curnode = nextnode;
 	}
 }

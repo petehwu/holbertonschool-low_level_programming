@@ -10,23 +10,26 @@ void selection_sort(int *array, size_t size)
 	size_t sorted, unsorted, index;
 	int val;
 
-	for (sorted = 0; sorted < size; sorted++)
+	if (size > 1)
 	{
-		val = array[sorted];
-		index = sorted;
-		for (unsorted = sorted; unsorted < size; unsorted++)
+		for (sorted = 0; sorted < size; sorted++)
 		{
-			if (val > array[unsorted])
+			val = array[sorted];
+			index = sorted;
+			for (unsorted = sorted; unsorted < size; unsorted++)
 			{
-				index = unsorted;
-				val = array[unsorted];
+				if (val > array[unsorted])
+				{
+					index = unsorted;
+					val = array[unsorted];
+				}
 			}
-		}
-		if (val != array[sorted])
-		{
-			array[index] = array[sorted];
-			array[sorted] = val;
-			print_array(array, size);
+			if (val != array[sorted])
+			{
+				array[index] = array[sorted];
+				array[sorted] = val;
+				print_array(array, size);
+			}
 		}
 	}
 }

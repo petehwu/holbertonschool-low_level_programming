@@ -2,7 +2,7 @@
 
 /**
  * selection_sort - performs a selection sort on a list
- * @arrary:  array of integers to sort
+ * @array:  array of integers to sort
  * @size: number of elements in @array
  */
 void selection_sort(int *array, size_t size)

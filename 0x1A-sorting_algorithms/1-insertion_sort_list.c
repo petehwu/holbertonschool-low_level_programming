@@ -10,15 +10,15 @@ void insertion_sort_list(listint_t **list)
 	listint_t  *curnode = *list, *nextnode = NULL;
 	size_t nodes = 0;
 
-	while(curnode)
+	while (curnode)
 	{
 		nodes++;
 		curnode = curnode->next;
 	}
 	curnode = *list;
 	if (nodes > 1)
-	{	
-		while(curnode)
+	{
+		while (curnode)
 		{
 			nextnode = curnode->next;
 			if (nextnode && curnode->n > nextnode->n)

@@ -90,4 +90,12 @@ size_t part(int *array, size_t start, size_t end, size_t size);
  */
 void swapper(int *array, size_t from, size_t to, size_t size);
 
+/**
+ * insertion_sort_swapper - swap nodes in lined list
+ * @list: pointer to pointer of list with nodes to be swapped
+ * @from: node to swap from
+ * @to: node to swap to
+ */
+void insertion_sort_swapper(listint_t **list, listint_t *from, listint_t *to);
+
 #endif

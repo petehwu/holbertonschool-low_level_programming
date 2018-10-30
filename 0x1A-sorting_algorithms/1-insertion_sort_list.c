@@ -7,14 +7,15 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t  *curnode = *list, *nextnode = NULL;
+	listint_t  *curnode, *nextnode = NULL;
 
 	if (!list || !*list || !(*list)->next)
 		return;
+	curnode = *list;
 	while (curnode->next)
 	{
 		nextnode = curnode->next;
-		if (nextnode && curnode->n > nextnode->n)
+		if (curnode->n > nextnode->n)
 		{
 			insertion_sort_swapper(list, curnode, nextnode);
 			while (nextnode->prev && nextnode->prev->n > nextnode->n)

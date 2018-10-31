@@ -98,4 +98,28 @@ void swapper(int *array, size_t from, size_t to, size_t size);
  */
 void insertion_sort_swapper(listint_t **list, listint_t *from, listint_t *to);
 
+/**
+ * shell_sort - implementation of shell sort algorithm
+ * @array:  array of integers to be sorted
+ * @size: number of elements in @array
+ */
+void shell_sort(int *array, size_t size);
+
+/**
+ * shell_insertion_sort - perform insert sort
+ * @array: array to sort
+ * @size: number of elements in array
+ * @start: start index
+ * @gap: gap value
+ */
+void shell_insertion_sort(int *array, size_t size, size_t start, size_t gap);
+
+/**
+ * calc_pow  - calculates a value to the power
+ * @val: value to use
+ * @pow: raise to the power
+ * @return: the value
+ */
+size_t calc_pow(size_t val, size_t pow);
+
 #endif

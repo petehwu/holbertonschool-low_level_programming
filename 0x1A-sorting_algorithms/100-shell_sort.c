@@ -36,37 +36,34 @@ void shell_sort(int *array, size_t size)
 void shell_insertion_sort(int *array, size_t size, size_t start, size_t gap)
 {
 	size_t i, curpos;
-	int temp, cur, next;
+	int  cur, next;
+
 
 	for (i = start; i < (size - gap); i += gap)
 	{
 		cur = array[i];
-		next = array[i+ gap];
+		next = array[i + gap];
 		if (cur > next)
 		{
-			temp = next;
-			array[i + gap] = cur;
-			array[i] = temp;
-			if (i > start && temp < array[i - gap])
+			curpos = i + gap;
+			while (i > start && next < array[i - gap])
 			{
-				curpos = i;
 				i -= gap;
-				while (i >= start && temp < array[i])
-					i -= gap;
-				/* do swap */
-				i += gap;
-				array[curpos] = array[i];
-				array[i] = temp;
 			}
+			if (next  > array[i])
+				i += gap;
+			array[curpos] = array[i];
+			array[i] = next;
 		}
 	}
 }
+
 
 /**
  * calc_pow  - calculates a value to the power
  * @val: value to use
  * @pow: raise to the power
- * @return: the value
+ * Return: the value
  */
 size_t calc_pow(size_t val, size_t pow)
 {
@@ -83,4 +80,4 @@ size_t calc_pow(size_t val, size_t pow)
 	}
 	return (t_val);
 }
-	
+

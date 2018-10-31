@@ -118,7 +118,7 @@ void shell_insertion_sort(int *array, size_t size, size_t start, size_t gap);
  * calc_pow  - calculates a value to the power
  * @val: value to use
  * @pow: raise to the power
- * @return: the value
+ * Return: the value
  */
 size_t calc_pow(size_t val, size_t pow);
 

@@ -122,4 +122,18 @@ void shell_insertion_sort(int *array, size_t size, size_t start, size_t gap);
  */
 size_t calc_pow(size_t val, size_t pow);
 
+/**
+ * counting_sort - implements counting sort
+ * @array: array of integers >= 0 to sort
+ * @size: number of elements in @array
+ */
+void counting_sort(int *array, size_t size);
+
+/**
+ * make_int_array - creates an integer arry of the specified size and init
+ * @size: size of array
+ * Return: newly created array of null if fails
+ */
+int *make_int_array(size_t size);
+
 #endif

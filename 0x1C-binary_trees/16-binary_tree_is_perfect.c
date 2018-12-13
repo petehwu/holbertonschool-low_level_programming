@@ -25,7 +25,7 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
  * count_nodes - counts total number of nodes in tree
  * @tree: nodes to start counting
  * @nodes: number of nodes counted
- * Return : number of nodes
+ * Return: number of nodes
  */
 size_t count_nodes(const binary_tree_t *tree, size_t nodes)
 {

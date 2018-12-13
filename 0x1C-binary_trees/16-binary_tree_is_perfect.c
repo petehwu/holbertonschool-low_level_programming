@@ -6,71 +6,50 @@
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-	int lb = 1, rb = 1;
-	size_t lh, rh;
+	size_t num_nodes = 0, levels = 0, i, val = 2;
 
 	if (!tree)
 		return (0);
-	if (!tree->left && !tree->right)
+	num_nodes = count_nodes(tree, 1);
+	levels = get_levels(tree);
+	for (i = 0; i < levels; i++)
+		val *= 2;
+	val--;
+	if (num_nodes == val)
 		return (1);
-	lh = recurse_perfect_height(tree->left);
-	rh = recurse_perfect_height(tree->right);
-	if (lh == rh)
-	{
-		lb = recurse_binary_tree_is_perfect1(tree->left, lb);
-		rb = recurse_binary_tree_is_perfect1(tree->right, rb);
-		if (lb == 1 && rb == 1)
-			return (1);
-		else
-			return (0);
-	}
 	else
 		return (0);
 
-
 }
 /**
- * recurse_perfect_height - checks height for tree
- * @tree: node to start calculation
- * Return: height of tree or 0 if tree is null
+ * count_nodes - counts total number of nodes in tree
+ * @tree: nodes to start counting
+ * @nodes: number of nodes counted
+ * Return : number of nodes
  */
-size_t recurse_perfect_height(const binary_tree_t *tree)
+size_t count_nodes(const binary_tree_t *tree, size_t nodes)
+{
+	if (tree->left)
+		nodes = count_nodes(tree->left, nodes + 1);
+	if (tree->right)
+		nodes = count_nodes(tree->right, nodes + 1);
+	return (nodes);
+}
+/**
+ * get_levels - gets level for tree
+ * @tree: root of tree
+ * Return: height of tree
+ */
+size_t get_levels(const binary_tree_t *tree)
 {
 	size_t left, right;
 
 	if (!tree || (!tree->left && !tree->right))
 		return (0);
-	left = recurse_perfect_height(tree->left) + 1;
-	right = recurse_perfect_height(tree->right) + 1;
+	left = get_levels(tree->left) + 1;
+	right = get_levels(tree->right) + 1;
 	if (left > right)
 		return (left);
 	else
 		return (right);
-}
-/**
- * recurse_binary_tree_is_perfect1 - checks for full tree
- * @tree: root of tree
- * @bal: tree is balanced
- * Return: 1 if tree is balanced otherwise 0
- */
-int recurse_binary_tree_is_perfect1(const binary_tree_t *tree, int bal)
-{
-	if (!tree)
-		return (0);
-	if (tree->left && bal)
-	{
-		if (tree->right)
-			bal = recurse_binary_tree_is_perfect1(tree->left, bal);
-		else
-			return (0);
-	}
-	if (tree->right && bal)
-	{
-		if (tree->left)
-			bal = recurse_binary_tree_is_perfect1(tree->right, bal);
-		else
-			return (0);
-	}
-	return (bal);
-
 }

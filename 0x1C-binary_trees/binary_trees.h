@@ -31,9 +31,8 @@ size_t recurse_tree_size(const binary_tree_t *tree, size_t size);
 size_t recursive_tree_leaves(const binary_tree_t *tree, size_t leaves);
 size_t recursive_nodes(const binary_tree_t *tree, size_t nodes);
 size_t recurse_tree_balance(const binary_tree_t *tree);
-size_t recurse_perfect_height(const binary_tree_t *tree);
-int recurse_binary_tree_is_perfect1(const binary_tree_t *tree, int bal);
-
+size_t count_nodes(const binary_tree_t *tree, size_t nodes);
+size_t get_levels(const binary_tree_t *tree);
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value);
 binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value);

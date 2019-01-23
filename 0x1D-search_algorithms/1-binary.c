@@ -49,5 +49,7 @@ int binary_helper(int *array, size_t low, size_t up, int value)
  */
 int binary_search(int *array, size_t size, int value)
 {
+	if (!array || !size)
+		return (-1);
 	return (binary_helper(array, 0, size - 1, value));
 }

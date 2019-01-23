@@ -9,7 +9,7 @@
  */
 int binary_helper(int *array, size_t low, size_t up, int value)
 {
-	size_t mid, i = low;
+	size_t mid, i;
 
 	printf("Searching in array: ");
 	for (i = low; i < up; i++)
@@ -17,25 +17,19 @@ int binary_helper(int *array, size_t low, size_t up, int value)
 	printf("%i\n", array[i]);
 	if (low == up && array[low] != value)
 		return (-1);
-	else if (array[low] == value)
+	mid = (low + up) / 2;
+	if (array[mid] > value)
 	{
-		return (low);
+		return (binary_helper(array, low, mid - 1, value));
+	}
+	else if (array[mid] < value)
+	{
+		return (binary_helper(array, mid + 1, up, value));
 	}
 	else
-	{
-		mid = (low + up) / 2;
-		if (array[mid] > value)
-		{
-			return (binary_helper(array, low, mid - 1, value));
-		}
-		else if (array[mid] < value)
-		{
-			return (binary_helper(array, mid + 1, up, value));
-		}
-		else
-			return (mid);
+		return (mid);
 
-	}
+
 
 }
 /**

@@ -11,13 +11,15 @@ int binary_helper(int *array, size_t low, size_t up, int value)
 {
 	size_t mid, i;
 
-	if (!array || low > up || (low == up && array[low] != value))
+	if (!array || low > up)
 		return (-1);
 	printf("Searching in array: ");
 	for (i = low; i < up; i++)
 		printf("%i, ", array[i]);
 	printf("%i\n", array[i]);
-	if (array[low] == value)
+	if (low == up && array[low] != value)
+		return (-1);
+	else if (array[low] == value)
 	{
 		return (low);
 	}

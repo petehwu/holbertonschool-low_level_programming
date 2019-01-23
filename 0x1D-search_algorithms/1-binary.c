@@ -9,10 +9,8 @@
  */
 int binary_helper(int *array, size_t low, size_t up, int value)
 {
-	size_t mid, i;
+	size_t mid, i = low;
 
-	if (!array)
-		return (-1);
 	printf("Searching in array: ");
 	for (i = low; i < up; i++)
 		printf("%i, ", array[i]);

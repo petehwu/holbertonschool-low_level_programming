@@ -27,7 +27,7 @@ int binary_helper(int *array, size_t low, size_t up, int value)
 		return (binary_helper(array, mid + 1, up, value));
 	}
 	else
-		if (array[mid - 1] == array[mid])
+		if (mid > 0 && array[mid - 1] == array[mid])
 			return (binary_helper(array, low, mid, value));
 		else
 			return (mid);

@@ -9,7 +9,7 @@
  */
 int binary_helper(int *array, size_t low, size_t up, int value)
 {
-	size_t mid, i;
+	size_t mid, i, t;
 
 	printf("Searching in array: ");
 	for (i = low; i < up; i++)
@@ -28,12 +28,12 @@ int binary_helper(int *array, size_t low, size_t up, int value)
 	}
 	else
 		if (mid > 0 && array[mid - 1] == array[mid])
-			return (binary_helper(array, low, mid, value));
+		{
+			t = ((low + up) % 2) ? mid : mid - 1;
+			return (binary_helper(array, low, t, value));
+		}
 		else
 			return (mid);
-
-
-
 }
 /**
  * advanced_binary - binary search algorithm
